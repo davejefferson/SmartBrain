@@ -1,10 +1,8 @@
 const express= require("express");
 const bodyParser = require("body-parser");
 
-
 const app = express();
 app.use(bodyParser.json());
-
 
 const database = {
     users: [
@@ -70,7 +68,6 @@ app.get("/profile/:id", (req,res)=>{
     }
 })
 
-
 app.put("/image", (req, res) => {
     const { id } = req.body;
     let found = false;
@@ -85,7 +82,6 @@ app.put("/image", (req, res) => {
         res.status(400).json("not found");
     }
 })
-
 
 app.listen(3000, ()=> {
     console.log("app is running on port 3000")
